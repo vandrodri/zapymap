@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulso Local - Seu Assistente GMB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Janela Modal de Login (continua igual) -->
+    <div id="auth-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content"><button id="close-modal-button" class="close-button">×</button><div id="login-view"><h2>Acessar Conta</h2><input type="email" id="login-email" placeholder="Seu e-mail" required><input type="password" id="login-password" placeholder="Sua senha" required><button id="login-button">Entrar</button><p class="auth-switch">Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p></div><div id="register-view" style="display: none;"><h2>Criar Nova Conta</h2><input type="email" id="register-email" placeholder="Seu e-mail" required><input type="password" id="register-password" placeholder="Crie uma senha" required><button id="register-button">Criar Conta</button><p class="auth-switch">Já tem uma conta? <a href="#" id="show-login">Faça o login</a></p></div><p id="auth-error" class="error-message"></p></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo Impulso Local" class="logo">
+            <div id="user-area"><button id="open-login-modal-button">Login</button></div>
+            <h1>Impulso Local</h1>
+            <p>Crie posts de alta qualidade para o seu negócio em 2 minutos.</p>
+        </header>
+
+        <main>
+            <!-- Gerador de Posts -->
+            <section class="card" id="gerador-posts">
+                <h2>Gerador de Posts Inteligente</h2>
+                <p>Escolha um tipo de post e preencha as informações.</p>
+                <div class="input-group"><label for="post-type">1. Tipo de Post:</label><select id="post-type"><option value="novidade">📢 Novidade</option><option value="oferta">💰 Oferta Especial</option><option value="evento">📅 Evento</option><option value="dica">💡 Dica da Semana</option></select></div>
+                <div class="input-group"><label for="post-template">2. Template de Texto:</label><textarea id="post-template" rows="8" placeholder="O texto do seu post aparecerá aqui..."></textarea></div>
+                <div class="actions">
+                    <button id="copy-button">Copiar Texto</button>
+                    <button id="save-post-button" style="display: none;">Salvar Post</button>
+                    <a href="https://business.google.com/locations" target="_blank" class="button-external">Abrir meu GMB ↗</a>
+                </div>
+            </section>
+
+            <!-- ⭐ SEÇÃO DE POSTS SALVOS (NOVA) ⭐ -->
+            <section class="card" id="saved-posts-section" style="display: none;">
+                <h2>🚀 Meus Posts Salvos</h2>
+                <div id="saved-posts-list">
+                    <!-- Posts salvos aparecerão aqui via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Outras seções continuam iguais -->
+            <section class="card" id="banco-ideias"><h2>💡 Banco de Ideias</h2><p id="ideia-texto">Clique no botão abaixo para gerar uma ideia de post!</p><button id="nova-ideia-button">Gerar Nova Ideia</button></section>
+            <section class="card" id="biblioteca-midia"><h2>🖼️ Biblioteca de Mídia Gratuita</h2><div class="search-bar"><input type="text" id="search-input" placeholder="Ex: café, escritório, pessoas felizes"><button id="search-button">Buscar</button></div><div id="image-results" class="image-grid"></div><p id="loading-message" style="display: none;">Buscando imagens...</p></section>
+            <section class="card" id="checklist-gmb"><h2>✅ Checklist de Otimização Semanal</h2><div class="checklist-item"><input type="checkbox" id="check1" name="check1"><label for="check1">Respondi todas as avaliações novas?</label></div><div class="checklist-item"><input type="checkbox" id="check2" name="check2"><label for="check2">Adicionei pelo menos 1 post nesta semana?</label></div><div class="checklist-item"><input type="checkbox" id="check3" name="check3"><label for="check3">Meu horário de funcionamento está correto?</label></div><div class="checklist-item"><input type="checkbox" id="check4" name="check4"><label for="check4">Adicionei fotos novas dos produtos/serviços este mês?</label></div><div class="checklist-item"><input type="checkbox" id="check5" name="check5"><label for="check5">Verifiquei e respondi as "Perguntas e Respostas"?</label></div></section>
+        </main>
+        <footer><p>Projeto Impulso Local. Idealizado por Vanderlei, construído por Gemini.</p></footer>
+    </div>
+
+    <!-- SDKs do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Nosso script principal -->
+    <script src="script.js"></script>
+</body>
+</html>

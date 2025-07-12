@@ -1,0 +1,483 @@
+/* Estilo Neumórfico - por Gemini */
+:root {
+    --bg-color: #e0e0e0;
+    --text-color: #333;
+    --primary-color: #2962ff;
+    --shadow-light: #ffffff;
+    --shadow-dark: #bebebe;
+    --card-bg: #e0e0e0;
+}
+
+/* Modo Escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #212121;
+        --text-color: #e0e0e0;
+        --primary-color: #448aff;
+        --shadow-light: #2c2c2c;
+        --shadow-dark: #161616;
+        --card-bg: #212121;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 
+        -7px -7px 14px var(--shadow-light),
+        7px 7px 14px var(--shadow-dark);
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card, .card-placeholder {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 
+        -9px -9px 18px var(--shadow-light),
+        9px 9px 18px var(--shadow-dark);
+}
+
+.card-placeholder {
+    opacity: 0.6;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button, .button-external {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#copy-button {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 
+        -5px -5px 10px var(--shadow-light),
+        5px 5px 10px var(--shadow-dark);
+}
+
+#copy-button:active {
+     box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+}
+
+.button-external {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+     box-shadow: 
+        -5px -5px 10px var(--shadow-light),
+        5px 5px 10px var(--shadow-dark);
+}
+
+.button-external:active {
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark); /* CORRIGIDO AQUI */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    opacity: 0.7;
+}/* Estilos para o Banco de Ideias */
+#banco-ideias {
+    text-align: center;
+}
+
+#banco-ideias p {
+    font-size: 1.1em;
+    min-height: 50px; /* Garante que o card não mude de tamanho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#nova-ideia-button {
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+     box-shadow: 
+        -5px -5px 10px var(--shadow-light),
+        5px 5px 10px var(--shadow-dark);
+}
+
+#nova-ideia-button:active {
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+}
+/* Estilos para a Biblioteca de Mídia */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    flex-grow: 1; /* Faz o campo de busca ocupar o espaço disponível */
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+#search-button {
+    padding: 0 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 
+        -5px -5px 10px var(--shadow-light),
+        5px 5px 10px var(--shadow-dark);
+}
+
+#search-button:active {
+     box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+#loading-message {
+    text-align: center;
+}
+/* Estilos para o Checklist GMB */
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checklist-item input[type="checkbox"] {
+    /* Esconde o checkbox padrão */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checklist-item label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px; /* Espaço para o nosso checkbox falso */
+    font-weight: normal; /* Sobrescreve o negrito do label geral */
+    margin-bottom: 0;
+}
+
+/* Cria nosso checkbox personalizado (o quadrado) */
+.checklist-item label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    box-shadow: inset -3px -3px 7px var(--shadow-light),
+                inset 3px 3px 7px var(--shadow-dark);
+}
+
+/* Cria o "check" (✓) quando marcado */
+.checklist-item input[type="checkbox"]:checked + label::after {
+    content: '✓';
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+/* Risca o texto quando marcado */
+.checklist-item input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+```css
+/* Estilos para a Área de Usuário e Modal de Autenticação */
+
+/* Posiciona o botão de login no topo */
+#user-area {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#user-area button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 
+        -5px -5px 10px var(--shadow-light),
+        5px 5px 10px var(--shadow-dark);
+}
+
+#user-area button:active {
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+}
+
+/* Fundo escurecido do Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Conteúdo da Janela Modal */
+.modal-content {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 
+        -9px -9px 18px var(--shadow-light),
+        9px 9px 18px var(--shadow-dark);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none !important;
+    color: var(--text-color) !important;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.auth-switch {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.auth-switch a {
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.error-message {
+    color: #ff5252;
+    margin-top: 15px;
+    font-weight: 600;
+    min-height: 20px;
+}
+/* Estilo para o botão Salvar Post */
+#save-post-button {
+    background-color: #ffc107; /* Um amarelo-ouro para destaque */
+    color: #333;
+    font-weight: 700;
+    box-shadow: 
+        -5px -5px 10px var(--shadow-light),
+        5px 5px 10px var(--shadow-dark);
+}
+
+#save-post-button:active {
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+/* Estilos para a Seção de Posts Salvos */
+
+#saved-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.saved-post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    box-shadow: inset -5px -5px 10px var(--shadow-light),
+                inset 5px 5px 10px var(--shadow-dark);
+}
+
+.saved-post-content {
+    flex-grow: 1;
+    text-align: left;
+    white-space: pre-wrap; /* Preserva as quebras de linha do post */
+    font-size: 0.9em;
+}
+
+.saved-post-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.saved-post-actions button {
+    padding: 8px 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 80px;
+}
+
+.use-post-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.delete-post-button {
+    background-color: #ff5252; /* Vermelho para ação de perigo */
+    color: white;
+}
+}
